@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 生日快乐！</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 生日祝福 -->
+    <div class="container">
+        <h1 class="fancy-title">生日快乐</h1>
+        <audio id="music" src="birthday.mp3"></audio>
+    </div>
+
+    <!-- 照片墙 -->
+    <div class="photo-gallery">
+        <a href="photo1.jpg" target="_blank"><img src="photo1.jpg" alt="回忆1"></a>
+        <a href="photo2.jpg" target="_blank"><img src="photo2.jpg" alt="回忆2"></a>
+        <a href="photo3.jpg" target="_blank"><img src="photo3.jpg" alt="回忆3"></a>
+    </div>
+
+    <!-- 粒子动画背景 -->
+    <div id="particles-js"></div>
+
+    <!-- 轮播图 -->
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="images/photo1.jpg" alt="Slide 1">
+        </div>
+        <div class="slide fade">
+            <img src="images/photo2.jpg" alt="Slide 2">
+        </div>
+        <div class="slide fade">
+            <img src="images/photo3.jpg" alt="Slide 3">
+        </div>
+    </div>
+
+    <!-- 互动区域 -->
+    <div class="interaction-section">
+        <button id="like-btn" class="vintage-button">❤️ 点赞 (<span id="like-count">0</span>)</button>
+        <button id="danmu-btn" class="vintage-button">🎆 发送弹幕</button>
+        <button id="chat-toggle" class="vintage-button">💬 聊天室</button>
+    </div>
+
+    <!-- 弹幕输入框 -->
+    <div id="danmu-container"></div>
+    <input type="text" id="danmu-input" placeholder="输入弹幕">
+    
+    <!-- 在线聊天室 -->
+    <div id="chat-box-container" style="display:none;">
+        <div id="chat-box"></div>
+        <input type="text" id="chat-input" placeholder="输入消息">
+        <button id="chat-send" class="vintage-button">发送</button>
+    </div>
+
+    <!-- 🎵 播放音乐按钮 -->
+    <button class="music-btn" onclick="playMusic()">🎵</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

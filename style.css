@@ -1,0 +1,186 @@
+/* 🌆 背景完整显示，可滚动 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑", sans-serif;
+    background: url('background.jpg') no-repeat center center fixed; /* 背景图片 */
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+/* 🎁 生日祝福框 */
+.container {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    margin: 50px auto;
+}
+
+/* 🎉 花体字标题 */
+.fancy-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 72px; /* 放大标题 */
+    color: #ff4081;
+    margin-bottom: 10px;
+    white-space: nowrap; /* 保证文字在同一行 */
+}
+
+/* 🎶 播放按钮 */
+.vintage-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #ff4081;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.vintage-button:hover {
+    background: #d81b60;
+}
+
+/* 📸 照片墙 */
+.photo-gallery {
+    position: fixed;
+    top: 100px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+.photo-gallery img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* 🎠 轮播图 */
+.slideshow-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+.fade {
+    animation: fade 1.5s ease-in-out;
+}
+
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+/* ❤️ 互动区域 */
+.interaction-section {
+    position: fixed;
+    top: 50px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 20;
+}
+
+#like-btn, #danmu-btn, #chat-toggle {
+    width: 180px;
+}
+
+/* 🎆 弹幕 */
+#danmu-container {
+    position: fixed;
+    top: 10%;
+    right: 10px; /* 弹幕框移动到右侧 */
+    width: 300px;
+    height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: none; /* 默认不显示，点击弹幕按钮时显示 */
+    z-index: 20;
+}
+
+.danmu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    animation: danmu-move 5s linear forwards;
+}
+
+@keyframes danmu-move {
+    from { left: 100%; }
+    to { left: -100%; }
+}
+
+/* 💬 在线聊天室 */
+#chat-box-container {
+    display: none;
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 300px;
+}
+
+#chat-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#chat-send {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* 🎵 音乐按钮 */
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff4081;
+    color: white;
+    font-size: 32px;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+}
+
+.music-btn:hover {
+    background-color: #d81b60;
+}
+
+/* 📱 移动端界面优化 */
+@media (max-width: 768px) {
+    .photo-gallery {
+        top: 60px;
+        left: 5px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .container {
+        width: 80%;
+        margin: 20px auto;
+    }
+}
